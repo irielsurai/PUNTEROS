@@ -7,17 +7,20 @@ typedef struct
     char c;
 }eDato;
 
-void mostrarDatos (eDato, int);
-void cargarDatos (eDato, int);
+/*
+//VERSION 5 TOMA DE DATOS CON FUNCION
+
+void mostrarDatos (eDato*, int);
+void cargarDatos (eDato*, int);
+
 
 int main()
 {
-    //VERSION 5 TOMA DE DATOS CON FUNCION
     eDato unDato[2];
     eDato* pDato;
     pDato = unDato; //cuando pasamos la direccion de un vector no necesitamos el & porque ya son direcciones de ubicacion
 
-    cargarDatos (unDato, 2);
+    cargarDatos (pDato, 2);
     mostrarDatos(unDato, 2);
 
     printf("\n\tHello world!\n");
@@ -42,24 +45,20 @@ void cargarDatos (eDato* listaDatos, int tam)
 
 void mostrarDatos (eDato* listaDatos, int tam)
 {
-        printf ("\n \t%d \t%f \t%c\n \t%d \t%f \t%c\n", (pDato+0)->a,
-                                                        (pDato+0)->b,
-                                                        (pDato+0)->c,
-                                                        (pDato+1)->a,
-                                                        (pDato+1)->b,           //ESCRITO DESTA MANERA
-                                                        (pDato+1)->c);
-
+        printf ("\n \t%d \t%f \t%c\n \t%d \t%f \t%c\n", (listaDatos+0)->a,
+                                                        (listaDatos+0)->b,
+                                                        (listaDatos+0)->c,
+                                                        (listaDatos+1)->a,
+                                                        (listaDatos+1)->b,           //ESCRITO DESTA MANERA
+                                                        (listaDatos+1)->c);
 
 }
+*/
 
-
-
-
-
-
-
-/*
-    //VERSION 4 TOMA DE DATOS
+/**
+//VERSION 4 TOMA DE DATOS
+int main()
+{
     eDato unDato[2];
     eDato* pDato;
     pDato = unDato; //cuando pasamos la direccion de un vector no necesitamos el & porque ya son direcciones de ubicacion
@@ -82,20 +81,28 @@ void mostrarDatos (eDato* listaDatos, int tam)
                                                         (pDato+1)->a,
                                                         (pDato+1)->b,           //ESCRITO DESTA MANERA
                                                         (pDato+1)->c);
+
+}
 */
 
- /*
-    //VERSION 3
+/*
+
+//VERSION 3
+int main()
+{
     eDato unDato = {1, 5.3, 'B'};
     printf ("\n \t%d \t%f \t%c\n", unDato.a,unDato.b, unDato.c);
     eDato* pDato;
     pDato = &unDato;
     printf ("\n \t%d \t%f \t%c\n", pDato->a,pDato->b, pDato->c); //Para acceder a los atributos de un objeto.
+
+}
 */
+/**
 
-
- /*
-    // VERSION 2
+// VERSION 2
+ int main()
+{
     eDato unDato[2] = {{2, 3.26, 'C'},{1, 5.3, 'B'}};
     //printf ("\n \t%d \t%f \t%c\n", unDato.a,unDato.b, unDato.c);
     eDato* pDato;
@@ -106,14 +113,20 @@ void mostrarDatos (eDato* listaDatos, int tam)
                                                         (*(pDato+1)).a,
                                                         (*(pDato+1)).b,
                                                         (*(pDato+1)).c);
+
+}
 */
 
 /*
-    //VERSION 1
+//VERSION 1
+int main()
+{
+
     eDato unDato = {1, 5.3, 'B'};
     printf ("\n \t%d \t%f \t%c\n", unDato.a,unDato.b, unDato.c); //Llamada por aray de esctructuras
     eDato* pDato;
     pDato = &unDato;
     printf ("\n \t%d \t%f \t%c\n", (*pDato).a,(*pDato).b, (*pDato).c); //Llamada por puntero
+}
 */
 
